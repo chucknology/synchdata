@@ -85,9 +85,10 @@ def read_raw_audio(filepath, Fs=22050):
     audio = np.fromfile(file=f, dtype=np.int16)
     return (Fs, audio)
     
-def synch(raw_audio_file, synchstring_file):
+def synch(raw_audio_file, synchstring_file=None, synchstring=None):
+    if not synchstring and synchstring_file:
+        synchstring = read_synchstring(synchstring_file)
     wav = read_raw_audio(raw_audio_file)
-    synchstring = read_synchstring(synchstring_file)
     decompressed_string = decompress_string(synchstring)
     if decompressed_string == None: return None
     zcs = decode_string(decompressed_string)
