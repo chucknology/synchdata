@@ -1,7 +1,8 @@
 # Synchdata with Synchstring
 
 by Tristan Jehan, 06/20/2011
-updated for Python 3 compatibility by Jasper Gilley in January 2023
+
+Updated for Python 3 compatibility by Jasper Gilley in January 2023
 
 Copyright (c) 2011 The Echo Nest Corporation
 
