@@ -92,7 +92,6 @@ def synch(raw_audio_file, synchstring_file=None, synchstring=None):
     wav = read_raw_audio(raw_audio_file)
     decompressed_string = decompress_string(synchstring)
     if decompressed_string == None: return None
-    print(decompressed_string)
 
     zcs = decode_string(decompressed_string)
     
