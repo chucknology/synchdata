@@ -15,6 +15,7 @@ SYNC_DURATION = 1
 # dz_n: number of samples to the next zero crossing
 
 def decode_string(s):
+    s = str(s, 'UTF-8')
     l = [int(i) for i in s.split(' ')]
     Fs = l.pop(0)
     Nch = l.pop(0)
@@ -91,7 +92,8 @@ def synch(raw_audio_file, synchstring_file=None, synchstring=None):
     wav = read_raw_audio(raw_audio_file)
     decompressed_string = decompress_string(synchstring)
     if decompressed_string == None: return None
-    print(desompressed_string)
+    print(decompressed_string)
+
     zcs = decode_string(decompressed_string)
     
     off = align_all(zcs, wav)
