@@ -328,10 +328,10 @@ int main(int argc, char** argv)
     //int result = synch(_pSamples, _NumberSamples, 1, 22050, buffer, offsets);
     
     int offset;
-    if (result == 0)
+    if (result == 0) {
         if (offsets.size() > 1) result = analyze_offsets(offsets, &offset);
         else offset = offsets[0];
-        
+    }    
     switch (result)
     {
         case  0: { fprintf(stderr, "Offset = %.5f seconds\n\n", offset/22050.0f); break; }
